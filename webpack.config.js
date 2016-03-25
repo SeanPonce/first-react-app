@@ -15,6 +15,23 @@ const common = {
     path: PATHS.build,
     filename: 'bundle.js'
   },
+  resolve: {
+    extensions: ['', '.js', '.jsx']
+  },
+  module: {
+    loaders: [
+      {
+        test: /\.css$/,
+        loaders: ['style', 'css'],
+        include: PATHS.app
+      },
+      {
+        test: /\.jsx?$/,
+        loaders: ['babel?cacheDirectory'],
+        include: PATHS.app
+      }
+    ]
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: 'app/index.ejs',
@@ -25,8 +42,10 @@ const common = {
 };
 
 if (TARGET === 'start' || !TARGET) {
+  // module.exports = merge(common, {});
   module.exports = merge(common, {
     devServer: {
+      devtool: 'eval-source-map',
       contentBase: PATHS.build,
       historyApiFallback: true,
       hot: true,

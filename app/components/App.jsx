@@ -1,7 +1,15 @@
 import React from 'react';
+import Messages from './Messages';
 
 export default class App extends React.Component {
   render() {
-    return <h1>Hello there</h1>;
+    return (
+      <div>
+        <h1>Hello there! Here are my messages:</h1>
+        <ul>
+          <Messages />
+        </ul>
+      </div>
+    );
   }
 }

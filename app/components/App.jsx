@@ -3,11 +3,10 @@ import {connect} from 'react-redux';
 import Messages from './Messages';
 
 @connect((state) => ({
-  messages: state.messages
+  messages: state
 }))
 export default class App extends React.Component {
   render() {
-    console.log("App: " + this.props.messages);
     return (
       <div>
         <h1>Hello there! Here are my messages:</h1>

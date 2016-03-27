@@ -3,7 +3,7 @@ import {connect, bindActionCreators} from 'react-redux';
 import Messages from './Messages';
 
 @connect((state) => ({
-  messages: state
+  messages: state.messages
 }))
 export default class App extends React.Component {
   render() {

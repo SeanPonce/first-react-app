@@ -1,6 +1,6 @@
 import {ActionTypes} from './Actions';
 import Immutable from 'immutable';
-import {createStore} from 'redux';
+import {combineReducers} from 'redux';
 
 const initialState = new Immutable.List();
 
@@ -17,6 +17,7 @@ function messages(state = initialState, action) {
   }
 }
 
-export default function configureStore() {
-  return createStore(messages, initialState);
+export default function() {
+  //return createStore(messages, initialState);
+  return combineReducers({messages});
 };

@@ -12,6 +12,9 @@ function messages(state = initialState, action) {
         message: action.message
       });
 
+    case 'CLEAR_ALL_MESSAGES':
+      return initialState;
+
     default:
       return state;
   }

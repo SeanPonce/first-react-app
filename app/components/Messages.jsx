@@ -1,6 +1,6 @@
 import React from 'react';
 import Message from './Message';
-import {addMessage} from '../Actions.js';
+import {addMessage, clearMessages} from '../Actions.js';
 
 export default class Messages extends React.Component {
   render() {
@@ -9,6 +9,7 @@ export default class Messages extends React.Component {
       <div className="Messages">
         <input type="text"
           onKeyPress={this.addMsg} />
+        <button onClick={this.clearMsgs}>Clear</button>
         <ul>{messages.map((message) =>
             <Message className="Message" key={message.id}
               value={message.message} />
@@ -24,5 +25,9 @@ export default class Messages extends React.Component {
       dispatch(addMessage(e.target.value));
       e.target.value = '';
     }
+  }
+
+  clearMsgs = () => {
+    this.props.dispatch(clearMessages());
   }
 }

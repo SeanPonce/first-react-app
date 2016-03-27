@@ -7,3 +7,9 @@ export function addMessage(message) {
     message
   };
 };
+
+export function clearMessages() {
+  return {
+    type: 'CLEAR_ALL_MESSAGES',
+  };
+};

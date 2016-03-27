@@ -1,3 +1,3 @@
-export Actions = {
-  ADD_LOG: "ADD_LOG"
+export default {
+  ADD_MESSAGE: 'ADD_MESSAGE'
 };
